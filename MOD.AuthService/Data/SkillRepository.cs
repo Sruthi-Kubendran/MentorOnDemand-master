@@ -59,7 +59,7 @@ namespace MOD.AuthService.Data
 
         public IEnumerable<Skill> GetSkills()
         {
-            throw new NotImplementedException();
+            return context.Skills.ToList();
         }
 
         public bool UpdateSkill(Skill skill)

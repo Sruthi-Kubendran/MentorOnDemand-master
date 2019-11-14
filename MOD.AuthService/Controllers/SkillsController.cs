@@ -33,7 +33,7 @@ namespace MOD.AuthService.Controllers
 
 
         // GET: api/Skills/5
-        [HttpGet("{id}", Name = "GetSkills")]
+        [HttpGet("{id}", Name = "Get")]
         public IActionResult Get(int id)
         {
             var skill = repository.GetSkill(id);
@@ -44,12 +44,6 @@ namespace MOD.AuthService.Controllers
             return Ok(skill);
         }
 
-        // GET: api/Skills
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
 
         // POST: api/Skills
         [HttpPost]
@@ -100,5 +94,7 @@ namespace MOD.AuthService.Controllers
             }
             return StatusCode(StatusCodes.Status500InternalServerError);
         }
+
+
     }
 }

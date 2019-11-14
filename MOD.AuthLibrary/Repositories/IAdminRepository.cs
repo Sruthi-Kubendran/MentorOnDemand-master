@@ -8,5 +8,6 @@ namespace MOD.AuthLibrary.Repositories
     public interface IAdminRepository
     {
         bool AddSkill(Skill model);
+        bool blockUserById(int id, bool isActive);
     }
 }

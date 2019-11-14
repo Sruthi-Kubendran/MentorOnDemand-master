@@ -14,5 +14,7 @@ namespace MOD.AuthLibrary.Models
         public string LastName { get; set; }
         [Required]
         public DateTime DateOfBirth { get; set; }
+        []
+        public bool IsActive { get; set; }
     }
 }

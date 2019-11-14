@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MOD.AuthLibrary.Migrations
 {
     [DbContext(typeof(MODContext))]
-    [Migration("20191113093738_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20191114120401_InitialMigration_0")]
+    partial class InitialMigration_0
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -73,21 +73,21 @@ namespace MOD.AuthLibrary.Migrations
                         new
                         {
                             Id = "1",
-                            ConcurrencyStamp = "5c93b1ec-e734-4fe6-a24f-534acb17f614",
+                            ConcurrencyStamp = "c174b91a-d622-43b6-9d19-116434969e80",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
                             Id = "2",
-                            ConcurrencyStamp = "f7429fcc-fee5-4041-9f01-c5d9785ca028",
+                            ConcurrencyStamp = "1aa3f625-4e5f-45c8-8de9-676eda30b069",
                             Name = "Mentor",
                             NormalizedName = "Mentor"
                         },
                         new
                         {
                             Id = "3",
-                            ConcurrencyStamp = "5f78774d-9a5f-46b5-a005-14ff37010b09",
+                            ConcurrencyStamp = "19ae84ea-a62a-4ad4-9e6a-8cbd24b63135",
                             Name = "Student",
                             NormalizedName = "Student"
                         });
@@ -278,6 +278,9 @@ namespace MOD.AuthLibrary.Migrations
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<string>("LastName")
                         .IsRequired()

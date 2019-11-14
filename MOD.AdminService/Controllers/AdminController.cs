@@ -45,8 +45,13 @@ namespace MOD.AdminService.Controllers
 
         // PUT: api/Admin/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IActionResult Put(int id, [FromBody] bool isActive)
         {
+            if (ModelState.IsValid)
+            {
+                repository.blockUserById(id, isActive);
+            }
+            return BadRequest(ModelState);
         }
 
         // DELETE: api/ApiWithActions/5

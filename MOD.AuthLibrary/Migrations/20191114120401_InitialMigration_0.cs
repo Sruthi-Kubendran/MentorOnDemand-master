@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MOD.AuthLibrary.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class InitialMigration_0 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -43,7 +43,8 @@ namespace MOD.AuthLibrary.Migrations
                     Discriminator = table.Column<string>(nullable: false),
                     FirstName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
-                    DateOfBirth = table.Column<DateTime>(nullable: true)
+                    DateOfBirth = table.Column<DateTime>(nullable: true),
+                    IsActive = table.Column<bool>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -174,17 +175,17 @@ namespace MOD.AuthLibrary.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "1", "5c93b1ec-e734-4fe6-a24f-534acb17f614", "Admin", "Admin" });
+                values: new object[] { "1", "c174b91a-d622-43b6-9d19-116434969e80", "Admin", "Admin" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "2", "f7429fcc-fee5-4041-9f01-c5d9785ca028", "Mentor", "Mentor" });
+                values: new object[] { "2", "1aa3f625-4e5f-45c8-8de9-676eda30b069", "Mentor", "Mentor" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "3", "5f78774d-9a5f-46b5-a005-14ff37010b09", "Student", "Student" });
+                values: new object[] { "3", "19ae84ea-a62a-4ad4-9e6a-8cbd24b63135", "Student", "Student" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
